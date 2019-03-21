@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="/new-blog" class="btn btn-primary">Create New Blog</a>
+<h3>List of Blogs</h3>
+<ul class="list-group">
+    {% for _, blog in t_blogs.items() %}
+    <li class="list-group-item"><a href="/blog/{{blog.id}}">{{ blog.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
